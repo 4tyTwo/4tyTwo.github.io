@@ -13,7 +13,7 @@ permalink: /databasedoc/
 first_name | <a href="https://www.postgresql.org/docs/9.5/datatype-character.html">text</a> |  | False | 
 last_name | <a href="https://www.postgresql.org/docs/9.5/datatype-character.html">text</a> | 'Andersson'::text | False | 
 joined_at | <a href="https://www.postgresql.org/docs/9.5/datatype-datetime.html">timestamp without time zone</a> |  | True | 
-contact_info | [contact_info](#contact_info) | ROW('EMAIL'::contact_method, 'default@email.com'::text) | False | 
+contact_info | [contact_info](#contact_info) | ROW('EMAIL'::contact_method, 'notfake@email.com'::text) | False | 
 adress | <a href="https://www.postgresql.org/docs/9.5/datatype-character.html">text</a> |  | True |  |
 
 ### <a name="pets"></a>pets
@@ -38,6 +38,20 @@ subject | <a href="https://www.postgresql.org/docs/9.5/datatype-numeric.html">in
 signed_at | <a href="https://www.postgresql.org/docs/9.5/datatype-datetime.html">timestamp without time zone</a> |  | False | 
 cost | [currency_amount](#currency_amount) |  | False | 
 valid_until | <a href="https://www.postgresql.org/docs/9.5/datatype-datetime.html">timestamp without time zone</a> |  | True |  |
+
+# Views
+
+### <a name="clients_pets"></a>clients_pets
+
+| Name | Type | Default | Nullable | References |
+| -- | -- | -- | -- | ---------- |
+| client_id | <a href="https://www.postgresql.org/docs/9.5/datatype-numeric.html">integer</a> |  | True | 
+pet_id | <a href="https://www.postgresql.org/docs/9.5/datatype-numeric.html">integer</a> |  | True | 
+species | [pet_type](#pet_type) |  | True | 
+breed | <a href="https://www.postgresql.org/docs/9.5/datatype-character.html">text</a> |  | True | 
+pet_name | <a href="https://www.postgresql.org/docs/9.5/datatype-character.html">text</a> |  | True | 
+born_at | <a href="https://www.postgresql.org/docs/9.5/datatype-datetime.html">date</a> |  | True | 
+bought_at | <a href="https://www.postgresql.org/docs/9.5/datatype-datetime.html">date</a> |  | True |  |
 
 # Types
 
